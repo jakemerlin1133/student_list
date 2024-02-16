@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -16,8 +17,18 @@ class StudentController extends Controller
     }
 
     public function create(Request $request){
-        dd($request);
-        return view('/register/store');
+        $validated = $request->validate([
+            "firstname" => ['required'],
+            "lastname" => ['required'],
+            "email" => ['required', 'email'],
+            "password" => 'required|confirmed|min:8'
+        ]);
+
+        $validated['password'] = bcrypt($validated['password']);
+
+        User::create($validated);
+
+        return redirect('/');
     }
 
     public function store(Request $request){

@@ -13,11 +13,11 @@
 <form action="/register/store" method="POST" class="text-center mt-4 flex flex-col">
 @csrf
     <div class="mt-4 px-2">
-        <input type="text" name="firstname" class="mx-auto text-gray-500 w-full h-14 pl-2 rounded font-semibold focus:outline-none" placeholder="Firstname">
+        <input type="text" name="firstname" id="firstname" class="mx-auto text-gray-500 w-full h-14 pl-2 rounded font-semibold focus:outline-none" placeholder="Firstname">
     </div>
 
     <div class="mt-4 px-2">
-        <input type="text" name="lastname" class="mx-auto text-gray-500 w-full h-14 pl-2 rounded font-semibold focus:outline-none" placeholder="Lastname">
+        <input type="text" name="lastname" id="lastname" class="mx-auto text-gray-500 w-full h-14 pl-2 rounded font-semibold focus:outline-none" placeholder="Lastname">
     </div>
 
 <div class="mt-4 px-2">

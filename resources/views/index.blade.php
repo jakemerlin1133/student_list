@@ -1,6 +1,6 @@
 @include('partials.header')
 
-<header class="max-w-lg mx-auto mt-48">
+<header class="max-w-lg mx-auto mt-24">
     <h1 class="text-6xl font-extrabold text-center mx-6">
         Student Login
     </h1>
@@ -20,7 +20,13 @@
             </div>
 
             @error('email')
-            <p class="text-red-500 text-xs mt-2">
+            <p class="text-red-600 text-sm font-semibold mt-2">
+                 {{ $message }}
+            </p>
+            @enderror
+
+            @error('password')
+            <p class="text-red-600 text-sm font-semibold mt-2">
                  {{ $message }}
             </p>
             @enderror
