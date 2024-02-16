@@ -13,7 +13,7 @@
 
     <section class="max-w-96 mx-auto text-center">
 
-        <form action="/store" method="POST" class="text-center flex flex-col">
+        <form action="/login/store" method="POST" class="text-center flex flex-col">
             @csrf
             <div class="mt-2 px-2">
                 <input type="Email" name="email" id="email" class="mx-auto text-gray-500 w-full h-14 pl-2 rounded font-semibold focus:outline-none" placeholder="Email">

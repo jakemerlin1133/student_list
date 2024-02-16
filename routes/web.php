@@ -16,4 +16,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [StudentController::class, 'index']);
 Route::get('/register', [StudentController::class, 'register']);
-Route::post('/store',[StudentController::class, 'store']);
+Route::post('/register/store', [StudentController::class, 'create']);
+Route::post('login/store',[StudentController::class, 'store']);

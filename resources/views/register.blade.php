@@ -10,8 +10,8 @@
 <main>
 
 <section class="max-w-96 mx-auto text-center">
-<form action="" class="text-center mt-4 flex flex-col">
-
+<form action="/register/store" method="POST" class="text-center mt-4 flex flex-col">
+@csrf
     <div class="mt-4 px-2">
         <input type="text" name="firstname" class="mx-auto text-gray-500 w-full h-14 pl-2 rounded font-semibold focus:outline-none" placeholder="Firstname">
     </div>

@@ -15,6 +15,11 @@ class StudentController extends Controller
         return view('register');
     }
 
+    public function create(Request $request){
+        dd($request);
+        return view('/register/store');
+    }
+
     public function store(Request $request){
 
         $validated = $request->validate([
