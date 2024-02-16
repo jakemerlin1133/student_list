@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class StudentController extends Controller
 {
@@ -20,7 +21,7 @@ class StudentController extends Controller
         $validated = $request->validate([
             "firstname" => ['required'],
             "lastname" => ['required'],
-            "email" => ['required', 'email'],
+            "email" => ['required', 'email', Rule::unique('users', 'email')],
             "password" => 'required|confirmed|min:8'
         ]);
 
