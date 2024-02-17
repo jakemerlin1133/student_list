@@ -19,24 +19,17 @@
                 <input type="Email" name="email" id="email" class="mx-auto text-gray-500 w-full h-14 pl-2 rounded font-semibold focus:outline-none" placeholder="Email">
             </div>
 
-            @error('email')
-            <p class="text-red-600 text-sm font-semibold mt-2">
-                 {{ $message }}
-            </p>
-            @enderror
-
-            @error('password')
-            <p class="text-red-600 text-sm font-semibold mt-2">
-                 {{ $message }}
-            </p>
-            @enderror
+            @if($errors->has('email') || $errors->has('password'))
+                <p class="text-red-600 text-sm font-semibold mt-2">
+                     Username or password incorrect
+                </p>
+            @endif
 
             <div class="mt-4 px-2">
                 <input type="Password" name="password" id="password"
                     class="mx-auto text-gray-500 w-full h-14 pl-2 rounded font-semibold focus:outline-none"
                     placeholder="Password">
             </div>
-
 
             <h6 class="font-medium text-white my-1">Haven't you already an account? <a href="/register" class="font-bold text-amber-300 hover:text-amber-500">Register Now</a></h6>
 

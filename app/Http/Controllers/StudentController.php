@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 
 class StudentController extends Controller
@@ -41,12 +42,24 @@ class StudentController extends Controller
 
         if(auth()->attempt($validated)){
             $request->session()->regenerate();
-            return redirect('homepage');
+            return redirect('/homepage');
         }else{
             return back()->withErrors(['email' => 'Login Failed.'])->onlyInput('email');
         }
+    }
 
+    public function homepage(){
+        if (Auth::check()) {
+            return view('homepage');
+        } else {
+            return abort(404);
+        }
+    }
 
+    public function logout(Request $request){
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/');
     }
 
 }
