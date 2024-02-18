@@ -1,11 +1,13 @@
 @include('partials.header')
 
-{{-- <form action="/logout" method="POST">
+<form action="/logout" method="POST">
     @csrf
-    <div class="mt-1 px-2">
-        <button class=" w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200">Logout</button>
+    <div class="fixed top-4 left-4">
+        <button>
+            <i class="fa-solid fa-power-off text-2xl font-bold"></i>
+        </button>
     </div>
-</form> --}}
+</form>
 
 <header class="max-w-lg mx-auto my-8">
     <h1 class="text-6xl font-extrabold text-center mx-6">
