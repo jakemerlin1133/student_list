@@ -50,9 +50,9 @@ class StudentController extends Controller
 
     public function homepage(){
         if (Auth::check()) {
-            return view('homepage');
+            return view('/homepage');
         } else {
-            return abort(404);
+            return redirect('/');
         }
     }
 
