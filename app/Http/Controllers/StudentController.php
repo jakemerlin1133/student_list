@@ -44,7 +44,10 @@ class StudentController extends Controller
             $request->session()->regenerate();
             return redirect('/homepage');
         }else{
-            return back()->withErrors(['email' => 'Login Failed.'])->onlyInput('email');
+            return back()
+            ->withErrors(['email' => 'Username or password incorrect',
+            'password' => 'Username or password incorrect'
+            ])->onlyInput('email');
         }
     }
 
@@ -62,4 +65,7 @@ class StudentController extends Controller
         return redirect('/');
     }
 
+    public function add(){
+        return view('/add');
+    }
 }

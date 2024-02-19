@@ -15,8 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [StudentController::class, 'index'])->name('login');
+Route::get('/homepage', [StudentController::class, 'homepage'])->middleware('auth');
+
 Route::get('/register', [StudentController::class, 'register']);
 Route::post('/register/store', [StudentController::class, 'create']);
 Route::post('/login/store',[StudentController::class, 'store']);
-Route::get('/homepage', [StudentController::class, 'homepage'])->middleware('auth');
+
+Route::get('/add', [StudentController::class, 'add']);
+
 Route::post('/logout', [StudentController::class, 'logout']);

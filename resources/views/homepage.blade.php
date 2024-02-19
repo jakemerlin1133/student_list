@@ -17,9 +17,11 @@
 
 <div class="overflow-x-auto my-4 mx-8 rounded-md">
 
-    <div class="flex justify-end">
-        <button type="button" class=" focus:outline-none text-white bg-cyan-900 hover:bg-cyan-800 focus:ring-4 focus:ring-cyan-300 font-medium rounded-lg text-sm px-2 py-2.5 my-2 dark:bg-cyan-1000 dark:hover:bg-cyan-700 dark:focus:ring-green-800">Add Student <i class="fa-solid fa-plus"></i></button>
-    </div>
+        <div class="flex justify-end">
+            <a href="/add">
+                <button class="focus:outline-none text-white bg-cyan-900 hover:bg-cyan-800 font-medium rounded-lg text-sm px-2 py-2.5 my-2 dark:bg-cyan-1000 dark:hover:bg-cyan-700">Add Student <i class="fa-solid fa-plus"></i></button>
+            </a>
+        </div>
 
     <table class="w-full">
         <thead class="bg-slate-200">
