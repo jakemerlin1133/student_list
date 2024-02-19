@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Student;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -67,5 +68,16 @@ class StudentController extends Controller
 
     public function add(){
         return view('/add');
+    }
+
+    public function submit_student(Request $request){
+        $validated = $request->validate([
+            "firstname" => ['required', 'min:4'],
+            "lastname" => ['required', 'min:4'],
+            "age" => ['required','numeric', 'min:17'],
+            "gender" => ['required', 'min:4'],
+            "block" => ['required', 'min:4'],
+        ]);
+        $student = Student::create($validated);
     }
 }

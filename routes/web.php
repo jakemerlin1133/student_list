@@ -22,5 +22,5 @@ Route::post('/register/store', [StudentController::class, 'create']);
 Route::post('/login/store',[StudentController::class, 'store']);
 
 Route::get('/add', [StudentController::class, 'add']);
-
+Route::post('/add/student', [StudentController::class, 'submit_student']);
 Route::post('/logout', [StudentController::class, 'logout']);
