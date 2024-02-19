@@ -79,5 +79,6 @@ class StudentController extends Controller
             "block" => ['required', 'min:4'],
         ]);
         $student = Student::create($validated);
+        return redirect('/homepage');
     }
 }
