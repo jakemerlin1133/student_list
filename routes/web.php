@@ -27,4 +27,6 @@ Route::post('/add/student', [StudentController::class, 'submit_student']);
 Route::get('/edit/{id}', [StudentController::class, 'edit']);
 Route::put('/edit/{id}', [StudentController::class, 'update_student']);
 
+Route::delete('/delete/{id}', [StudentController::class, 'destroy']);
+
 Route::post('/logout', [StudentController::class, 'logout']);

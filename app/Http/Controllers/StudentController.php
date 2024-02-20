@@ -74,11 +74,6 @@ class StudentController extends Controller
         return view('add');
     }
 
-    public function edit($id){
-        $data = Student::findOrFail($id);
-        return view('edit', ['student' => $data]);
-    }
-
     public function submit_student(Request $request){
         $validated = $request->validate([
             "firstname" => ['required', 'min:4'],
@@ -91,12 +86,31 @@ class StudentController extends Controller
         return redirect('/homepage');
     }
 
+    public function edit($id){
+        $data = Student::findOrFail($id);
+        return view('edit', ['student' => $data]);
+    }
+
     public function update_student(Request $request, $id){
+
+        $validated = $request->validate([
+            "firstname" => ['required', 'min:4'],
+            "lastname" => ['required', 'min:4'],
+            "age" => ['required','numeric', 'min:17'],
+            "gender" => ['required', 'min:4'],
+            "block" => ['required', 'min:4'],
+        ]);
 
         $data = Student::findOrFail($id);
 
-        $data->update($request->all());
+        $data->update($validated);
 
         return redirect('homepage');
+    }
+
+    public function destroy(Request $request, $id){
+        $data = Student::findOrFail($id);
+        $data->delete($data);
+       return redirect('homepage');
     }
 }
