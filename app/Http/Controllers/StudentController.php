@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
+use PhpParser\Node\Expr\Cast\String_;
 
 class StudentController extends Controller
 {
@@ -53,8 +54,11 @@ class StudentController extends Controller
     }
 
     public function homepage(){
+
+        $data = Student::all();
+
         if (Auth::check()) {
-            return view('/homepage');
+            return view('/homepage', ['students' => $data]);
         } else {
             return redirect('/');
         }
@@ -67,7 +71,12 @@ class StudentController extends Controller
     }
 
     public function add(){
-        return view('/add');
+        return view('add');
+    }
+
+    public function edit($id){
+        $data = Student::findOrFail($id);
+        return view('edit', ['student' => $data]);
     }
 
     public function submit_student(Request $request){
@@ -80,5 +89,14 @@ class StudentController extends Controller
         ]);
         $student = Student::create($validated);
         return redirect('/homepage');
+    }
+
+    public function update_student(Request $request, $id){
+
+        $data = Student::findOrFail($id);
+
+        $data->update($request->all());
+
+        return redirect('homepage');
     }
 }

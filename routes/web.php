@@ -23,4 +23,8 @@ Route::post('/login/store',[StudentController::class, 'store']);
 
 Route::get('/add', [StudentController::class, 'add']);
 Route::post('/add/student', [StudentController::class, 'submit_student']);
+
+Route::get('/edit/{id}', [StudentController::class, 'edit']);
+Route::put('/edit/{id}', [StudentController::class, 'update_student']);
+
 Route::post('/logout', [StudentController::class, 'logout']);

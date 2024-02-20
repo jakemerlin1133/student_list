@@ -58,9 +58,9 @@
     <div class="mt-4 px-2">
         <select name="block" id="block" class="mx-auto text-gray-500 w-full h-14 pl-2 rounded font-semibold focus:outline-none" placeholder="Password">
             <option selected value="">Choose your Block</option>
-            <option value="block1">Block 1</option>
-            <option value="block2">Block 2</option>
-            <option value="block3">Block 3</option>
+            <option value="Block-1">Block-1</option>
+            <option value="Block-2">Block-2</option>
+            <option value="Block-3">Block-3</option>
         </select>
     </div>
 
