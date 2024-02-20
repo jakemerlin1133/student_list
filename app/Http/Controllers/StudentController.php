@@ -108,7 +108,7 @@ class StudentController extends Controller
         return redirect('homepage');
     }
 
-    public function destroy(Request $request, $id){
+    public function destroy($id){
         $data = Student::findOrFail($id);
         $data->delete($data);
        return redirect('homepage');
