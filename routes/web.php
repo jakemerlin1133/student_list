@@ -21,10 +21,10 @@ Route::get('/register', [StudentController::class, 'register']);
 Route::post('/register/store', [StudentController::class, 'create']);
 Route::post('/login/store',[StudentController::class, 'store']);
 
-Route::get('/add', [StudentController::class, 'add']);
+Route::get('/add', [StudentController::class, 'add'])->middleware('auth');
 Route::post('/add/student', [StudentController::class, 'submit_student']);
 
-Route::get('/edit/{id}', [StudentController::class, 'edit']);
+Route::get('/edit/{id}', [StudentController::class, 'edit'])->middleware('auth');
 Route::put('/edit/{id}', [StudentController::class, 'update_student']);
 
 Route::delete('/delete/{id}', [StudentController::class, 'destroy']);

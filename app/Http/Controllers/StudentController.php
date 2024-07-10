@@ -48,7 +48,6 @@ class StudentController extends Controller
         }else{
             return back()
             ->withErrors(['email' => 'Username or password incorrect',
-            'password' => 'Username or password incorrect'
             ])->onlyInput('email');
         }
     }
